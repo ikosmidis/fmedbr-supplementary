@@ -1,0 +1,40 @@
+\begin{table}[t!]
+\centering
+\begin{talltblr}[         %% tabularray outer open
+caption={Comparison of the maximum likelihood estimator ($\hat\psi$), the median bias-corrected focus estimator ($\tilde\psi$), and the $r^*$-based estimator ($\psi^*$) of the $0.99$ quantile in terms of simulation-based estimates (see Example~\ref{ex:weibull}) of probability of underestimation (PU), root mean squared error (RMSE), and coverage of nominally $95\%$ $r^*$-based confidence intervals, HulC-type confidence intervals with $\Delta = 0$, and Wald-type confidence intervals, based on supplied and compatible estimates of $\btheta$ (``Wald [S]'' and ``Wald [C]'', respectively). All summaries are $\times 100$.},
+label={tab:weibull1},
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]},
+hline{2}={1-8}{solid, black, 0.05em},
+hline{5}={1-8}{solid, black, 0.05em},
+hline{8}={1-8}{solid, black, 0.05em},
+hline{11}={1-8}{solid, black, 0.05em},
+hline{1}={1-8}{solid, black, 0.08em},
+hline{14}={1-8}{solid, black, 0.08em},
+row{1}={}{halign=c},
+cell{2-13}{2}={}{halign=l},
+cell{2-13}{3}={}{halign=r},
+cell{2-13}{4}={}{halign=r},
+cell{2-13}{5}={}{halign=r},
+cell{2-13}{6}={}{halign=r},
+cell{2-13}{7}={}{halign=r},
+cell{2-13}{8}={}{halign=r},
+cell{2,5,8,11}{1}={r=3}{halign=r, valign=h},
+cell{3-4,6-7,9-10,12-13}{1}={}{halign=r},
+}                     %% tabularray inner close
+$n$ & Estimator & PU & RMSE & $r^*$ & HulC & Wald [S] & Wald [C] \\
+25 & $\hat\psi$ & 58.3 & 97.5 &   & 85.0 & 88.2 & 88.2 \\
+25 & $\tilde\psi$ & 50.3 & 102.7 &   & 94.0 & 90.2 & 91.4 \\
+25 & $\psi^*$ & 49.7 & 103.6 & 95.0 &   &   &   \\
+50 & $\hat\psi$ & 55.9 & 69.1 &   & 90.3 & 91.5 & 91.5 \\
+50 & $\tilde\psi$ & 49.9 & 71.0 &   & 94.8 & 92.6 & 93.3 \\
+50 & $\psi^*$ & 49.6 & 71.2 & 94.9 &   &   &   \\
+100 & $\hat\psi$ & 54.6 & 48.8 &   & 92.7 & 93.1 & 93.1 \\
+100 & $\tilde\psi$ & 50.3 & 49.4 &   & 95.0 & 93.7 & 94.1 \\
+100 & $\psi^*$ & 50.1 & 49.4 & 94.9 &   &   &   \\
+200 & $\hat\psi$ & 53.1 & 34.5 &   & 93.8 & 94.1 & 94.1 \\
+200 & $\tilde\psi$ & 50.1 & 34.7 &   & 94.9 & 94.4 & 94.6 \\
+200 & $\psi^*$ & 50.0 & 34.7 & 94.9 &   &   &   \\
+\end{talltblr}
+\end{table}

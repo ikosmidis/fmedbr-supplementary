@@ -1,0 +1,126 @@
+---
+title: 'Supplementary material for "Focused median bias reduction"'
+
+author:
+  - name: "[Davide Benussi](https://davidebenussi.github.io/)"
+    email: davide.benussi@phd.unipd.it
+    affiliations: 
+      - University of Padova
+      - University of Warwick
+    url: https://davidebenussi.github.io/
+  - name: "[Ioannis Kosmidis](https://www.ikosmidis.com)"
+    email: ioannis.kosmidis@warwick.ac.uk
+    affiliation: University of Warwick
+    url: https://www.ikosmidis.com
+  - name: "[Alessandra Salvan](https://homes.stat.unipd.it/alessandrasalvan/en/home-2/)"
+    email: salvan@stat.unipd.it
+    affiliation: University of Padova
+    url: https://homes.stat.unipd.it/alessandrasalvan/en/home-2/	
+  - name: "[Nicola Sartori](https://homes.stat.unipd.it/nicolasartori/en/home-2/)"
+    email: sartori@stat.unipd.it
+    affiliation: University of Padova
+    url: https://homes.stat.unipd.it/nicolasartori/en/home-2/
+date: last-modified
+date-format: long
+format: md
+---
+
+# Directory structure
+
+```{r}
+#| echo: false
+#| message: false
+library("tinytable")
+R_pkgs <- data.frame(Package = sort(c("brbetabinomial", "focuson",
+                                      "BAMBI", "numDeriv", "future.apply",
+                                      "brglm2", "MuMIn", "enrichwith",
+                                      "detectseparation", "dplyr", "progressr", "tidyr",
+                                      "mvtnorm", "tinytest", "ISLR2",
+                                      "ordinal", "pracma", "likelihoodAsy",
+                                      "ggplot2", "tinytable", "patchwork",
+                                      "robustbase")))
+for (pkg in R_pkgs$Package)
+    library(pkg, character.only = TRUE)
+s_info <- sessionInfo()
+R_v <- s_info$R.version$version.string
+R_pkgs_v <- R_pkgs |> transform(Version = sapply(R_pkgs$Package, function(pkg)
+                                    s_info$otherPkgs[[pkg]]$Version))
+rownames(R_pkgs_v) <- NULL
+```
+
+The directory `code/` contains the R scripts that reproduce all the
+numerical experiments in the manuscript
+
+> Benussi D, Kosmidis I, Salvan A, Sartori N (2026). Focused median bias reduction. https://arxiv.org/abs/2311.07419
+
+and the Supplementary Material document [`fmedbr-supplementary.pdf`](fmedbr-supplementary.pdf).
+
+Running those scripts populates the directory `results/` with the
+results of those experiments.
+
+Then, running the script `produce_outputs.R` generates all tables (in
+the directory `tables/` in LaTeX format) and graphics (in the
+directory `figures/` in PDF format) reported in the main text and the
+Supplementary Material document.
+
+# R version and contributed packages
+
+All results are reproducible using `{r} R_v` and the contributed
+packages
+```{r}
+#| echo: false
+tt(R_pkgs_v)
+```
+
+The `focuson` R package is available [here](https://github.com/ikosmidis/focuson).
+
+The `brbetabinomial` R package is available [here](https://github.com/eulogepagui/brbetabinomial).
+
+# Reproducing the results
+
+## Path
+
+All scripts specify the path to the supplementary material path as
+`base_dir`. This is currently set to `.` assuming that the working
+directory in R is set to the current `git` repository. If this is not the
+case for your setup, you should set `base_dir` appropriately.
+
+## Details
+
+The following table lists the R scripts that need to be executed in
+order to reproduce the results. The table also lists the outputs from
+each script, and their label if they are shown in the main text or the
+Supplementary Material document. Some of the outputs are intermediate
+results, so the scripts should be executed in the order shown.
+
+
+| Script                                                    | Output                                                                       | Type   |
+|-----------------------------------------------------------|------------------------------------------------------------------------------|--------|
+| [beta-binomial.R](code/beta-binomial.R)                   | [beta-binomial.rda](results/beta-binomial.rda)                               |        |
+| [biv-von-Mises-var1.R](code/biv-von-Mises-var1.R)         | [bvmsin-circular-variance.rda](results/bvmsin-circular-variance.rda)         |        |
+| [fic.R](code/fic.R)                                       | [fic.rda](results/fic.rda)                                                   |        |
+| [mahalanobis-distance.R](code/mahalanobis-distance.R)     | [mahalanobis-distance.rda](results/mahalanobis-distance.rda)                 |        |
+| [mahalanobis-distance-2.R](code/mahalanobis-distance-2.R) | [mahalanobis-distance-2sample.rda](results/mahalanobis-distance-2sample.rda) |        |
+| [marginal-effects.R](code/marginal-effects.R)             | [marginal-effects.rda](results/marginal-effects.rda)                         |        |
+| [ordinal-superiority.R](code/ordinal-superiority.R)       | [osm.rda](results/osm.rda)                                                   |        |
+| [weibull.R](code/weibull.R)                               | [weibull.rda](results/weibull.rda)                                           |        |
+| [produce_outputs.R](produce_outputs.R)                    | [beta-binomial.tex](tables/beta-binomial.tex)                                | Table  |
+|                                                           | [bvmsin-circular-variance.tex](tables/bvmsin-circular-variance.tex)          | Table  |
+|                                                           | [fic.tex](tables/fic.tex)                                                    | Table  |
+|                                                           | [mahalanobis-distance.tex](tables/mahalanobis-distance.tex)                  | Table  |
+|                                                           | [mahalanobis-distance-2sample.tex](tables/mahalanobis-distance-2sample.tex)  | Table  |
+|                                                           | [osm.tex](tables/osm.tex)                                                    | Table  |
+|                                                           | [weibull1.tex](tables/weibull1.tex)                                          | Table  |
+|                                                           | [weibull5.tex](tables/weibull5.tex)                                          | Table  |
+|                                                           | [weibull10.tex](tables/weibull10.tex)                                        | Table  |
+|                                                           | [marginal-effects.pdf](figures/marginal-effects.pdf)                        | Figure |
+|                                                           | [marginal-effects-cover.pdf](figures/marginal-effects-cover.pdf)             | Figure |
+
+
+
+
+
+
+
+
+

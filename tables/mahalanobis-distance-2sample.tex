@@ -1,0 +1,61 @@
+\begin{table}[t!]
+\centering
+\begin{talltblr}[         %% tabularray outer open
+caption={Comparison of the maximum likelihood estimator ($\hat\psi$) and the median bias-corrected focus estimator ($\tilde\psi$) of the squared Mahalanobis distance between two multivariate normal distributions in terms of simulation-based estimates of mean bias (BIAS), mean absolute deviation (MAD), probability of underestimation (PU), root mean squared error (RMSE), and coverage of $95\%$ Wald-type confidence intervals, where the standard error is estimated by $\{K_2(\hat\psi)\}^{1/2}$ and $\{K_2(\tilde\psi)\}^{1/2}$, respectively. All summaries are $\times 100$.},
+label={tab:mahalanobis-distance-two-sample},
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]},
+hline{2}={1-8}{solid, black, 0.05em},
+hline{6}={1-8}{solid, black, 0.05em},
+hline{10}={1-8}{solid, black, 0.05em},
+hline{14}={1-8}{solid, black, 0.05em},
+hline{18}={1-8}{solid, black, 0.05em},
+hline{22}={1-8}{solid, black, 0.05em},
+hline{1}={1-8}{solid, black, 0.08em},
+hline{26}={1-8}{solid, black, 0.08em},
+column{3}={si={table-format=-4.0,table-align-text-before=false,table-align-text-after=false,input-symbols={-,\*+()}},},
+cell{1}{3}={guard,halign=c,},
+column{4}={si={table-format=-3.1,table-align-text-before=false,table-align-text-after=false,input-symbols={-,\*+()}},},
+cell{1}{4}={guard,halign=c,},
+column{5}={si={table-format=-3.1,table-align-text-before=false,table-align-text-after=false,input-symbols={-,\*+()}},},
+cell{1}{5}={guard,halign=c,},
+column{6}={si={table-format=-2.1,table-align-text-before=false,table-align-text-after=false,input-symbols={-,\*+()}},},
+cell{1}{6}={guard,halign=c,},
+column{7}={si={table-format=-3.1,table-align-text-before=false,table-align-text-after=false,input-symbols={-,\*+()}},},
+cell{1}{7}={guard,halign=c,},
+column{8}={si={table-format=-2.1,table-align-text-before=false,table-align-text-after=false,input-symbols={-,\*+()}},},
+cell{1}{8}={guard,halign=c,},
+row{1}={}{halign=c},
+cell{2,10,18}{1}={r=8}{halign=r, valign=h},
+cell{2,6,10,14,18,22}{2}={r=4}{halign=l, valign=h},
+cell{3-5,7-9,11-13,15-17,19-21,23-25}{2}={}{halign=l},
+cell{3-9,11-17,19-25}{1}={}{halign=r},
+}                     %% tabularray inner close
+$p$ & Estimator & $n$ & BIAS & MAD & PU & RMSE & Coverage \\
+10 & $\hat\psi$ & 128 & 53.8 & 63.3 & 19.1 & 81.6 & 97.1 \\
+10 & $\hat\psi$ & 256 & 25.5 & 36.4 & 27.0 & 46.8 & 95.9 \\
+10 & $\hat\psi$ & 512 & 12.4 & 22.9 & 33.3 & 29.2 & 95.3 \\
+10 & $\hat\psi$ & 1024 & 6.1 & 15.2 & 38.1 & 19.3 & 95.1 \\
+10 & $\tilde\psi$ & 128 & 1.1 & 43.5 & 53.2 & 55.3 & 95.9 \\
+10 & $\tilde\psi$ & 256 & 1.7 & 29.6 & 51.0 & 37.4 & 95.7 \\
+10 & $\tilde\psi$ & 512 & 1.0 & 20.5 & 50.4 & 25.9 & 95.4 \\
+10 & $\tilde\psi$ & 1024 & 0.6 & 14.4 & 50.2 & 18.1 & 95.2 \\
+20 & $\hat\psi$ & 128 & 136.5 & 139.5 & 5.5 & 166.6 & 94.2 \\
+20 & $\hat\psi$ & 256 & 61.6 & 67.6 & 13.2 & 83.6 & 92.0 \\
+20 & $\hat\psi$ & 512 & 29.3 & 37.4 & 21.8 & 47.1 & 92.8 \\
+20 & $\hat\psi$ & 1024 & 14.3 & 22.8 & 29.1 & 28.9 & 93.6 \\
+20 & $\tilde\psi$ & 128 & -18.0 & 63.1 & 63.0 & 78.3 & 95.4 \\
+20 & $\tilde\psi$ & 256 & -1.8 & 40.9 & 54.1 & 51.4 & 96.2 \\
+20 & $\tilde\psi$ & 512 & 0.4 & 28.0 & 51.4 & 35.2 & 95.8 \\
+20 & $\tilde\psi$ & 1024 & 0.5 & 19.5 & 50.5 & 24.5 & 95.4 \\
+30 & $\hat\psi$ & 128 & 260.6 & 261.1 & 1.1 & 294.8 & 91.7 \\
+30 & $\hat\psi$ & 256 & 110.9 & 113.7 & 5.6 & 133.9 & 86.2 \\
+30 & $\hat\psi$ & 512 & 51.7 & 57.2 & 13.3 & 70.0 & 88.5 \\
+30 & $\hat\psi$ & 1024 & 24.9 & 32.2 & 21.8 & 40.2 & 91.2 \\
+30 & $\tilde\psi$ & 128 & -70.7 & 98.1 & 79.3 & 116.7 & 91.2 \\
+30 & $\tilde\psi$ & 256 & -10.5 & 52.4 & 59.0 & 65.3 & 96.2 \\
+30 & $\tilde\psi$ & 512 & -1.2 & 35.1 & 52.9 & 44.1 & 96.1 \\
+30 & $\tilde\psi$ & 1024 & 0.2 & 24.4 & 51.0 & 30.6 & 95.7 \\
+\end{talltblr}
+\end{table}

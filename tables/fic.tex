@@ -1,0 +1,38 @@
+\begin{table}[t!]
+\centering
+\begin{talltblr}[         %% tabularray outer open
+caption={Comparison of the maximum likelihood focus estimator from the wide model ($\hat\psi_{(\mA)}$), the maximum likelihood focus estimator and its corrected version from the FIC-selected model ($\hat\psi_{(\hat{\mS})}$ and cor.~$\hat\psi_{(\hat{\mS})}$, respectively), and the median bias-corrected estimator from the wide model ($\tilde\psi_{(\mA)}$) in terms of simulation-based estimates (see Example~\ref{ex:fic}) of probability of underestimation (PU), mean bias (BIAS), and root mean squared error (RMSE). The focus parameters are the three race-specific risk differences for low birth weight due to smoking during pregnancy. The column ``Wald'' reports the coverage of nominally $95\%$ Wald-type intervals. Those corresponding to the median bias-corrected estimator are based on supplied estimates of $\btheta$, and those based on cor.~$\hat\psi_{(\hat{\mS})}$ use the estimated standard error from the wide model.  The column ``HulC'' reports the coverage of nominally $95\%$ HulC-type intervals with $\Delta = 0$. All summaries are $\times 100$.},
+label={tab:fic},
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]Q[]},
+hline{2}={1-7}{solid, black, 0.05em},
+hline{6}={1-7}{solid, black, 0.05em},
+hline{10}={1-7}{solid, black, 0.05em},
+hline{1}={1-7}{solid, black, 0.08em},
+hline{14}={1-7}{solid, black, 0.08em},
+row{1}={}{halign=c},
+cell{2-13}{2}={}{halign=l},
+cell{2-13}{3}={}{halign=r},
+cell{2-13}{4}={}{halign=r},
+cell{2-13}{5}={}{halign=r},
+cell{2-13}{6}={}{halign=r},
+cell{2-13}{7}={}{halign=r},
+cell{2,6,10}{1}={r=4}{halign=l, valign=h},
+cell{3-5,7-9,11-13}{1}={}{halign=l},
+}                     %% tabularray inner close
+Race & Estimator & PU & BIAS & RMSE & Wald & HulC \\
+white & $\hat\psi_{(\mA)}$ & 57.2 & -0.1 & 4.9 & 88.8 &   \\
+white & $\hat\psi_{(\hat{\mS})}$ & 43.7 & 2.1 & 6.6 & 84.3 &   \\
+white & cor.~$\hat\psi_{(\hat{\mS})}$ & 55.4 & 0.1 & 4.9 & 89.7 &   \\
+white & $\tilde\psi_{(\mA)}$ & 50.5 & 0.6 & 5.0 & 92.8 & 94.8 \\
+black & $\hat\psi_{(\mA)}$ & 54.2 & 0.1 & 9.5 & 88.5 &   \\
+black & $\hat\psi_{(\hat{\mS})}$ & 42.0 & 3.4 & 11.1 & 84.2 &   \\
+black & cor.~$\hat\psi_{(\hat{\mS})}$ & 52.4 & 0.6 & 9.7 & 88.7 &   \\
+black & $\tilde\psi_{(\mA)}$ & 50.4 & 0.8 & 9.5 & 90.3 & 95.2 \\
+other & $\hat\psi_{(\mA)}$ & 51.9 & 0.8 & 9.8 & 88.3 &   \\
+other & $\hat\psi_{(\hat{\mS})}$ & 39.0 & 4.4 & 11.8 & 82.0 &   \\
+other & cor.~$\hat\psi_{(\hat{\mS})}$ & 50.1 & 1.4 & 10.1 & 88.1 &   \\
+other & $\tilde\psi_{(\mA)}$ & 49.8 & 1.1 & 9.6 & 90.0 & 94.8 \\
+\end{talltblr}
+\end{table}
