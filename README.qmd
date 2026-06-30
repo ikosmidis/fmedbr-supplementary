@@ -51,7 +51,7 @@ rownames(R_pkgs_v) <- NULL
 The directory `code/` contains the R scripts that reproduce all the
 numerical experiments in the manuscript
 
-> Benussi D, Kosmidis I, Salvan A, Sartori N (2026). Focused median bias reduction. https://arxiv.org/abs/2311.07419
+> Benussi D, Kosmidis I, Salvan A, Sartori N (2026). Focused median bias reduction. https://arxiv.org/abs/2606.28597
 
 and the Supplementary Material document [`fmedbr-supplementary.pdf`](fmedbr-supplementary.pdf).
 

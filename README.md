@@ -3,7 +3,7 @@
 Kosmidis](https://www.ikosmidis.com), [Alessandra
 Salvan](https://homes.stat.unipd.it/alessandrasalvan/en/home-2/), [Nicola
 Sartori](https://homes.stat.unipd.it/nicolasartori/en/home-2/)
-June 29, 2026
+June 30, 2026
 
 # Directory structure
 
@@ -11,7 +11,7 @@ The directory `code/` contains the R scripts that reproduce all the
 numerical experiments in the manuscript
 
 > Benussi D, Kosmidis I, Salvan A, Sartori N (2026). Focused median bias
-> reduction. https://arxiv.org/abs/2311.07419
+> reduction. https://arxiv.org/abs/2606.28597
 
 and the Supplementary Material document
 [`fmedbr-supplementary.pdf`](fmedbr-supplementary.pdf).
