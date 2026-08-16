@@ -319,16 +319,17 @@ with_progress({
         coefs <- update(c_fit, data = cdat) |> coef()
         c_coef[names(coefs)] <- coefs
         comps <- estimate_focus_components_fef(c_coef,
-                                               data = wine,
                                                loglik,
                                                score,
                                                info,
                                                simulate = simulate_acl,
                                                nsim = nsim,
                                                parallelize = TRUE,
-                                               simu_data = wine,
-                                               formula = fm,
-                                               po = po)
+                                               likelihood_args = list(
+                                                   data = wine,
+                                                   simu_data = wine,
+                                                   formula = fm,
+                                                   po = po))
         list(estimate = c_coef, components = comps)
     })
 })
