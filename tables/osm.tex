@@ -1,0 +1,27 @@
+\begin{table}[t!]
+\centering
+\begin{talltblr}[         %% tabularray outer open
+caption={Comparison of the plug-in estimator $\gamma^\dagger = h(\btheta^\dagger)$ of~(\ref{eq:osm}) with the MBC focus estimator $\tilde\gamma$ based on Monte Carlo estimates $\bP_1, \ldots, \bP_p$ at $\btheta^\dagger$ ($R = 500$), in terms of simulation-based estimates (see Example~\ref{ex:ordinal-superiority}) of probability of underestimation (PU), mean bias (BIAS), root mean squared error (RMSE), and coverage of nominally $95\%$ Wald-type confidence intervals based on the supplied estimates of $\btheta$. All summaries are $\times 100$.},
+label={tab:osm},
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]},
+hline{2}={1-6}{solid, black, 0.05em},
+hline{1}={1-6}{solid, black, 0.08em},
+hline{6}={1-6}{solid, black, 0.08em},
+row{1}={}{halign=c},
+cell{2-5}{2}={}{halign=l},
+cell{2-5}{3}={}{halign=r},
+cell{2-5}{4}={}{halign=r},
+cell{2-5}{5}={}{halign=r},
+cell{2-5}{6}={}{halign=r},
+cell{2,4}{1}={r=2}{halign=l, valign=h},
+cell{3,5}{1}={}{halign=l},
+}                     %% tabularray inner close
+Temperature & Estimator & PU & BIAS & RMSE & Wald \\
+cold & $\gamma^\dagger$ & 62.5 & -2.5 & 7.6 & 97.3 \\
+cold & $\tilde\gamma$ & 50.3 & -0.3 & 8.4 & 94.8 \\
+warm & $\gamma^\dagger$ & 63.7 & -2.8 & 7.9 & 97.1 \\
+warm & $\tilde\gamma$ & 50.2 & -0.3 & 8.5 & 94.6 \\
+\end{talltblr}
+\end{table}
