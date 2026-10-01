@@ -12,7 +12,7 @@ img_file <- file.path(results_dir, "mahalanobis-distance.rda")
 out_file <- file.path(tables_dir, "mahalanobis-distance.tex")
 ## Load results
 load(img_file)
-caption <- "Comparison of the maximum likelihood estimator ($\\hat\\psi$) and the median bias-corrected focus estimator ($\\tilde\\psi$) of the squared Mahalanobis distance in terms of simulation-based estimates (see Example~\\ref{ex:mahalanobis-distance}) of mean bias (BIAS), mean absolute deviation (MAD), probability of underestimation (PU), root mean squared error (RMSE), and coverage of $95\\%$ Wald-type confidence intervals, where the standard error is estimated by $\\{K_2(\\hat\\psi)\\}^{1/2}$ and $\\{K_2(\\tilde\\psi)\\}^{1/2}$, respectively. All summaries are $\\times 100$."
+caption <- "Comparison of the ML estimator ($\\hat\\psi$) and the MBC focus estimator ($\\tilde\\psi$) of the squared Mahalanobis distance in terms of simulation-based estimates (see Example~\\ref{ex:mahalanobis-distance}) of mean bias (BIAS), mean absolute deviation (MAD), probability of underestimation (PU), root mean squared error (RMSE), and coverage of $95\\%$ Wald-type confidence intervals, where the standard error is estimated by $\\{K_2(\\hat\\psi)\\}^{1/2}$ and $\\{K_2(\\tilde\\psi)\\}^{1/2}$, respectively. All summaries are $\\times 100$."
 ## Create table
 summaries$rmse <- sqrt(summaries$mse)
 summaries$method <- factor(summaries$method, levels = c("ML", "medianBR", "meanBR"), ordered = TRUE)
@@ -152,7 +152,7 @@ focuson_res <- focuson_settings |>
     subset(select = c("focus", "median_ML", "median_meanBR"))
 res <- brbb_res |>  left_join(focuson_res, by = "focus")
 levels(res$focus) <- c("$\\xi$", "$\\rho$")
-caption <- "Estimates of the beta-binomial overdispersion parameter for the carrots data in Example~\\ref{ex:beta-binomial}. The table reports estimates on both the logit scale $\\xi=\\log\\{\\rho/(1 - \\rho)\\}$ and the intra-class correlation scale $\\rho$. The columns show the maximum likelihood estimator $\\hat\\psi$, the reduced median-bias estimator $\\psi^*$ of \\citet{pagui+etal:2017}, and the median bias-corrected estimator $\\tilde\\psi$ in~\\eqref{eq:focused}, computed using either the maximum likelihood estimator (ML) or the reduced mean-bias estimator (meanBR) of $\\btheta = (\\beta_1, \\ldots, \\beta_4, \\xi)^\\top$."
+caption <- "Estimates of the beta-binomial overdispersion parameter for the carrots data in Example~\\ref{ex:beta-binomial}. The table reports estimates on both the logit scale $\\xi=\\log\\{\\rho/(1 - \\rho)\\}$ and the intra-class correlation scale $\\rho$. The columns show the ML estimator $\\hat\\psi$, the reduced median-bias estimator $\\psi^*$ of \\citet{pagui+etal:2017}, and the MBC estimator $\\tilde\\psi$ in~\\eqref{eq:focused}, computed using either the ML estimator (ML) or the reduced mean-bias estimator (meanBR) of $\\btheta = (\\beta_1, \\ldots, \\beta_4, \\xi)^\\top$."
 res |>
     rename(`$\\psi^*$` = median,
            `$\\hat\\psi$` = no,
@@ -185,7 +185,7 @@ keep <- c("n", "estimator", "pu", "rmse",
 new_names <- c("$n$", "Estimator", "PU", "RMSE",
                "$r^*$", "HulC", "Wald [S]", "Wald [C]")
 for (r in seq_along(aqs)) {
-    caption <- paste0("Comparison of the maximum likelihood estimator ($\\hat\\psi$), the median bias-corrected focus estimator ($\\tilde\\psi$), and the $r^*$-based estimator ($\\psi^*$) of the $", sprintf("%0.2f", 1 - aqs[r]), "$ quantile in terms of simulation-based estimates (see Example~\\ref{ex:weibull}) of probability of underestimation (PU), root mean squared error (RMSE), and coverage of nominally $95\\%$ $r^*$-based confidence intervals, HulC-type confidence intervals with $\\Delta = 0$, and Wald-type confidence intervals, based on supplied and compatible estimates of $\\btheta$ (``Wald [S]'' and ``Wald [C]'', respectively). All summaries are $\\times 100$.")
+    caption <- paste0("Comparison of the ML estimator ($\\hat\\psi$), the MBC focus estimator ($\\tilde\\psi$), and the $r^*$-based estimator ($\\psi^*$) of the $", sprintf("%0.2f", 1 - aqs[r]), "$ quantile in terms of simulation-based estimates (see Example~\\ref{ex:weibull}) of probability of underestimation (PU), root mean squared error (RMSE), and coverage of nominally $95\\%$ $r^*$-based confidence intervals, HulC-type confidence intervals with $\\Delta = 0$, and Wald-type confidence intervals, based on supplied and compatible estimates of $\\btheta$ (``Wald [S]'' and ``Wald [C]'', respectively). All summaries are $\\times 100$.")
     summaries_keep <- summaries |>
         subset(estimator != "mean" & alpha_q == aqs[r],
                select = keep) |>
@@ -221,7 +221,7 @@ img_file <- file.path(results_dir, "osm.rda")
 out_file <- file.path(tables_dir, "osm.tex")
 ## Load results
 load(img_file)
-caption <- "Comparison of the plug-in estimator $\\gamma^\\dagger = h(\\btheta^\\dagger)$ of~(\\ref{eq:osm}) with the median bias-corrected focus estimator $\\tilde\\gamma$ based on Monte Carlo estimates $\\bP_1, \\ldots, \\bP_p$ at $\\btheta^\\dagger$ ($R = 500$), in terms of simulation-based estimates (see Example~\\ref{ex:ordinal-superiority}) of probability of underestimation (PU), mean bias (BIAS), root mean squared error (RMSE), and coverage of nominally $95\\%$ Wald-type confidence intervals based on the supplied estimates of $\\btheta$. All summaries are $\\times 100$."
+caption <- "Comparison of the plug-in estimator $\\gamma^\\dagger = h(\\btheta^\\dagger)$ of~(\\ref{eq:osm}) with the MBC focus estimator $\\tilde\\gamma$ based on Monte Carlo estimates $\\bP_1, \\ldots, \\bP_p$ at $\\btheta^\\dagger$ ($R = 500$), in terms of simulation-based estimates (see Example~\\ref{ex:ordinal-superiority}) of probability of underestimation (PU), mean bias (BIAS), root mean squared error (RMSE), and coverage of nominally $95\\%$ Wald-type confidence intervals based on the supplied estimates of $\\btheta$. All summaries are $\\times 100$."
 new_names <- c("Temperature", "Estimator", "PU", "BIAS", "RMSE", "Wald")
 summaries |>
     transform(pu = pu * 100,
@@ -248,7 +248,7 @@ summaries |>
 ####################
 img_file <- file.path(results_dir, "fic.rda")
 out_file <- file.path(tables_dir, "fic.tex")
-caption <- paste0("Comparison of the maximum likelihood focus estimator from the wide model ($\\hat\\psi_{(\\mA)}$), the maximum likelihood focus estimator and its corrected version from the FIC-selected model ($\\hat\\psi_{(\\hat{\\mS})}$ and cor.~$\\hat\\psi_{(\\hat{\\mS})}$, respectively), and the median bias-corrected estimator from the wide model ($\\tilde\\psi_{(\\mA)}$) in terms of simulation-based estimates (see Example~\\ref{ex:fic}) of probability of underestimation (PU), mean bias (BIAS), and root mean squared error (RMSE). The focus parameters are the three race-specific risk differences for low birth weight due to smoking during pregnancy. The column ``Wald'' reports the coverage of nominally $95\\%$ Wald-type intervals. Those corresponding to the median bias-corrected estimator are based on supplied estimates of $\\btheta$, and those based on cor.~$\\hat\\psi_{(\\hat{\\mS})}$ use the estimated standard error from the wide model.  The column ``HulC'' reports the coverage of nominally $95\\%$ HulC-type intervals with $\\Delta = 0$. All summaries are $\\times 100$.")
+caption <- paste0("Comparison of the ML focus estimator from the wide model ($\\hat\\psi_{(\\mA)}$), the ML focus estimator and its corrected version from the FIC-selected model ($\\hat\\psi_{(\\hat{\\mS})}$ and cor.~$\\hat\\psi_{(\\hat{\\mS})}$, respectively), and the MBC estimator from the wide model ($\\tilde\\psi_{(\\mA)}$) in terms of simulation-based estimates (see Example~\\ref{ex:fic}) of probability of underestimation (PU), mean bias (BIAS), and root mean squared error (RMSE). The focus parameters are the three race-specific risk differences for low birth weight due to smoking during pregnancy. The column ``Wald'' reports the coverage of nominally $95\\%$ Wald-type intervals. Those corresponding to the MBC estimator are based on supplied estimates of $\\btheta$, and those based on cor.~$\\hat\\psi_{(\\hat{\\mS})}$ use the estimated standard error from the wide model.  The column ``HulC'' reports the coverage of nominally $95\\%$ HulC-type intervals with $\\Delta = 0$. All summaries are $\\times 100$.")
 ## Load results
 load(img_file)
 summaries <- summaries |>
@@ -292,7 +292,7 @@ summaries |>
 img_file <- file.path(results_dir, "mahalanobis-distance-2sample.rda")
 out_file <- file.path(tables_dir, "mahalanobis-distance-2sample.tex")
 load(img_file)
-caption <- "Comparison of the maximum likelihood estimator ($\\hat\\psi$) and the median bias-corrected focus estimator ($\\tilde\\psi$) of the squared Mahalanobis distance between two multivariate normal distributions in terms of simulation-based estimates of mean bias (BIAS), mean absolute deviation (MAD), probability of underestimation (PU), root mean squared error (RMSE), and coverage of $95\\%$ Wald-type confidence intervals, where the standard error is estimated by $\\{K_2(\\hat\\psi)\\}^{1/2}$ and $\\{K_2(\\tilde\\psi)\\}^{1/2}$, respectively. All summaries are $\\times 100$."
+caption <- "Comparison of the ML estimator ($\\hat\\psi$) and the MBC focus estimator ($\\tilde\\psi$) of the squared Mahalanobis distance between two multivariate normal distributions in terms of simulation-based estimates of mean bias (BIAS), mean absolute deviation (MAD), probability of underestimation (PU), root mean squared error (RMSE), and coverage of $95\\%$ Wald-type confidence intervals, where the standard error is estimated by $\\{K_2(\\hat\\psi)\\}^{1/2}$ and $\\{K_2(\\tilde\\psi)\\}^{1/2}$, respectively. All summaries are $\\times 100$."
 summaries$rmse <- sqrt(summaries$mse)
 summaries$method <- factor(summaries$method,
                            levels = c("ML", "medianBR", "meanBR"),
@@ -337,7 +337,7 @@ summaries_keep |>
 img_file <- file.path(results_dir, "bvmsin-circular-variance.rda")
 out_file <- file.path(tables_dir, "bvmsin-circular-variance.tex")
 load(img_file)
-caption <- "Comparison of the plug-in estimator $\\hat\\psi = h(\\hat\\btheta)$ of the circular variance of the first angular component in the bivariate von Mises sine model with the mean bias-corrected focus estimator $\\hat\\psi - \\hatsabias$ and the median bias-corrected focus estimator $\\tilde\\psi$, both based on Monte Carlo estimates of $\\iinfo(\\btheta)$, $\\bP_1,\\ldots,\\bP_p$ and $\\bQ_1,\\ldots,\\bQ_p$ at $\\hat\\btheta$ ($R = 500$), in terms of simulation-based estimates of probability of underestimation (PU), mean bias (BIAS), mean absolute deviation (MAD), root mean squared error (RMSE), and coverage of nominally $95\\%$ Wald-type confidence intervals based on supplied and compatible estimates of $\\btheta$ (Wald [S] and Wald [C], respectively), and HulC-type confidence intervals. All summaries are $\\times 100$."
+caption <- "Comparison of the plug-in estimator $\\hat\\psi = h(\\hat\\btheta)$ of the circular variance of the first angular component in the bivariate von Mises sine model with the mean bias-corrected focus estimator $\\hat\\psi - \\hatsabias$ and the MBC focus estimator $\\tilde\\psi$, both based on Monte Carlo estimates of $\\iinfo(\\btheta)$, $\\bP_1,\\ldots,\\bP_p$ and $\\bQ_1,\\ldots,\\bQ_p$ at $\\hat\\btheta$ ($R = 500$), in terms of simulation-based estimates of probability of underestimation (PU), mean bias (BIAS), mean absolute deviation (MAD), root mean squared error (RMSE), and coverage of nominally $95\\%$ Wald-type confidence intervals based on supplied and compatible estimates of $\\btheta$ (Wald [S] and Wald [C], respectively), and HulC-type confidence intervals. All summaries are $\\times 100$."
 summaries$rmse <- sqrt(summaries$mse)
 summaries$method <- factor(summaries$method,
                            levels = c("ML", "meanBR", "medianBR"),
@@ -376,4 +376,97 @@ summaries_keep |>
   theme_latex(outer = "label={tab:bvmsin-circular-variance}",
               placement = "t!") |>
   save_tt(out_file, overwrite = TRUE)
+
+
+## Multiple mediators
+#########################################################
+for (exp_set in c("a", "b", "c")) {
+    img_file <- file.path(results_dir, paste0("multiple-mediator-", exp_set, ".rda"))
+    load(img_file)
+    methods <- c("ML", "medianBR")
+    estimator_names <- c(ML = "$\\hat\\psi$", medianBR = "$\\tilde\\psi$")
+    tables <- data.frame(tau = c(1, 4),
+                         name = c(paste0("multiple-mediator-", exp_set, "1"),
+                                  paste0("multiple-mediator-", exp_set, "4")))
+    new_names <- c("$q$", "Estimator", "$n$", "PU", "BIAS", "RMSE", "Wald", "HulC")
+    A <- switch(exp_set,
+                 "a" = "n / 8",
+                 "b" = "3n / 32",
+                 "c" = "n / 16")
+    for (s in seq_len(nrow(tables))) {
+        tau_value <- tables$tau[s]
+        out_file <- file.path(tables_dir, paste0(tables$name[s], ".tex"))
+        caption <- paste0("Comparison of the ML focus estimator ",
+                          "($\\hat\\psi$) and the MBC focus estimator ",
+                          "($\\tilde\\psi$) of the joint indirect effect ",
+                          "for $\\tau = ", tables$tau[s], "$ and ",
+                          "$n_1 =", A, "$, in terms of simulation-based estimates ",
+                          "(see Example~\\ref{ex:mediation-analysis}) of probability of ",
+                          "underestimation (PU), mean bias (BIAS), and root mean squared ",
+                          "error (RMSE). The column ``Wald'' reports the coverage of ",
+                          "nominally $95\\%$ Wald-type intervals using the estimated ",
+                          "standard error evaluated at the supplied maximum likelihood ",
+                          "estimate of $\\btheta$. The column ``HulC'' reports the coverage ",
+                          "of nominally $95\\%$ HulC-type intervals with $\\Delta = 0$, ",
+                          "constructed using the corresponding estimator. All summaries ",
+                          "are $\\times 100$.")
+        summaries_keep <- summaries |>
+            filter(tau == tau_value, method %in% methods) |>
+            mutate(method = factor(method, levels = methods, ordered = TRUE)) |>
+            arrange(q, method, n)
+        stopifnot(nrow(summaries_keep) > 0)
+        q_sizes <- rle(summaries_keep$q)$lengths
+        q_rows <- cumsum(c(1L, head(q_sizes, -1L)))
+        method_sizes <- rle(paste(summaries_keep$q,
+                                  summaries_keep$method))$lengths
+        method_rows <- cumsum(c(1L, head(method_sizes, -1L)))
+        tab <- summaries_keep |>
+            mutate(
+                method = unname(estimator_names[as.character(method)]),
+                pu = pu * 100,
+                bias = bias * 100,
+                rmse = rmse * 100,
+                cover_wald = cover_wald * 100,
+                cover_hulc = cover_hulc * 100
+            ) |>
+            select(q, method, n, pu, bias, rmse, cover_wald, cover_hulc) |>
+            setNames(new_names) |>
+            tt(caption = caption) |>
+            format_tt(j = 4:8, digits = 1,
+                      num_fmt = "decimal", num_zero = TRUE) |>
+            format_tt(replace = TRUE) |>
+            style_tt(align = "rlrrrrrr", bold = FALSE) |>
+        style_tt(i = "colnames", align = "c", bold = FALSE)
+        ## Multirows
+        for (i in seq_along(q_rows)) {
+            tab <- tab |>
+                style_tt(i = q_rows[i], j = 1,
+                         rowspan = q_sizes[i], alignv = "t")
+        }
+        for (i in seq_along(method_rows)) {
+            tab <- tab |>
+                style_tt(i = method_rows[i], j = 2,
+                         rowspan = method_sizes[i], alignv = "t")
+        }
+        ## Midrules between estimators
+        estimator_rows <- setdiff(method_rows, q_rows)
+        if (length(estimator_rows) > 0) {
+            tab <- tab |>
+                style_tt(i = estimator_rows, j = 2:8,
+                         line = "t", line_width = 0.05)
+        }
+        ## Midrules between q blocks
+        if (length(q_rows) > 1) {
+            tab <- tab |>
+                style_tt(i = q_rows[-1], j = 1:8,
+                         line = "t", line_width = 0.05)
+        }
+        tab |>
+            theme_latex(
+                outer = paste0("label={tab:", tables$name[s], "}"),
+                placement = "t!"
+            ) |>
+            save_tt(out_file, overwrite = TRUE)
+    }
+}
 
