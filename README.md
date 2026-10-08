@@ -67,7 +67,7 @@ contributed packages
 </tr>
 <tr>
 <td>focuson</td>
-<td>0.3.900</td>
+<td>0.4</td>
 </tr>
 <tr>
 <td>future.apply</td>
