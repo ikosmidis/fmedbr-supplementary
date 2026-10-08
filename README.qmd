@@ -102,6 +102,9 @@ results, so the scripts should be executed in the order shown.
 | [mahalanobis-distance.R](code/mahalanobis-distance.R)     | [mahalanobis-distance.rda](results/mahalanobis-distance.rda)                 |        |
 | [mahalanobis-distance-2.R](code/mahalanobis-distance-2.R) | [mahalanobis-distance-2sample.rda](results/mahalanobis-distance-2sample.rda) |        |
 | [marginal-effects.R](code/marginal-effects.R)             | [marginal-effects.rda](results/marginal-effects.rda)                         |        |
+| [multiple-mediator.R](code/multiple-mediator.R)           | [multiple-mediator-a.rda](results/multiple-mediator-a.rda)                   |        |
+|                                                           | [multiple-mediator-b.rda](results/multiple-mediator-b.rda)                   |        |
+|                                                           | [multiple-mediator-c.rda](results/multiple-mediator-c.rda)                   |        |
 | [ordinal-superiority.R](code/ordinal-superiority.R)       | [osm.rda](results/osm.rda)                                                   |        |
 | [weibull.R](code/weibull.R)                               | [weibull.rda](results/weibull.rda)                                           |        |
 | [produce_outputs.R](produce_outputs.R)                    | [beta-binomial.tex](tables/beta-binomial.tex)                                | Table  |
@@ -109,12 +112,20 @@ results, so the scripts should be executed in the order shown.
 |                                                           | [fic.tex](tables/fic.tex)                                                    | Table  |
 |                                                           | [mahalanobis-distance.tex](tables/mahalanobis-distance.tex)                  | Table  |
 |                                                           | [mahalanobis-distance-2sample.tex](tables/mahalanobis-distance-2sample.tex)  | Table  |
+|                                                           | [multiple-mediator-a1.tex](tables/multiple-mediator-a1.tex)                  | Table  |
+|                                                           | [multiple-mediator-a4.tex](tables/multiple-mediator-a4.tex)                  | Table  |
+|                                                           | [multiple-mediator-b1.tex](tables/multiple-mediator-b1.tex)                  | Table  |
+|                                                           | [multiple-mediator-b4.tex](tables/multiple-mediator-b4.tex)                  | Table  |
+|                                                           | [multiple-mediator-c1.tex](tables/multiple-mediator-c1.tex)                  | Table  |
+|                                                           | [multiple-mediator-c4.tex](tables/multiple-mediator-c1.tex)                  | Table  |
 |                                                           | [osm.tex](tables/osm.tex)                                                    | Table  |
 |                                                           | [weibull1.tex](tables/weibull1.tex)                                          | Table  |
 |                                                           | [weibull5.tex](tables/weibull5.tex)                                          | Table  |
 |                                                           | [weibull10.tex](tables/weibull10.tex)                                        | Table  |
-|                                                           | [marginal-effects.pdf](figures/marginal-effects.pdf)                        | Figure |
+|                                                           | [marginal-effects.pdf](figures/marginal-effects.pdf)                         | Figure |
 |                                                           | [marginal-effects-cover.pdf](figures/marginal-effects-cover.pdf)             | Figure |
+
+
 
 
 

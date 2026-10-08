@@ -1,5 +1,6 @@
 base_dir <- "."
 
+## This script should be run three times with `exp_set <- "a"`, `exp_set <- "b"` and `exp_set <- "c"`
 exp_set <- "c"
 ## 0.125 (a: n1 = n/8); 0.09375 (b: n1 = 3n/32); 0.0625 (c: n1 = n/16)
 

@@ -3,7 +3,7 @@
 Kosmidis](https://www.ikosmidis.com), [Alessandra
 Salvan](https://homes.stat.unipd.it/alessandrasalvan/en/home-2/), [Nicola
 Sartori](https://homes.stat.unipd.it/nicolasartori/en/home-2/)
-June 30, 2026
+October 8, 2026
 
 # Directory structure
 
@@ -205,6 +205,24 @@ href="results/mahalanobis-distance-2sample.rda">mahalanobis-distance-2sample.rda
 <td></td>
 </tr>
 <tr>
+<td><a href="code/multiple-mediator.R">multiple-mediator.R</a></td>
+<td><a
+href="results/multiple-mediator-a.rda">multiple-mediator-a.rda</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a
+href="results/multiple-mediator-b.rda">multiple-mediator-b.rda</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a
+href="results/multiple-mediator-c.rda">multiple-mediator-c.rda</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="code/ordinal-superiority.R">ordinal-superiority.R</a></td>
 <td><a href="results/osm.rda">osm.rda</a></td>
 <td></td>
@@ -240,6 +258,42 @@ href="tables/mahalanobis-distance.tex">mahalanobis-distance.tex</a></td>
 <td></td>
 <td><a
 href="tables/mahalanobis-distance-2sample.tex">mahalanobis-distance-2sample.tex</a></td>
+<td>Table</td>
+</tr>
+<tr>
+<td></td>
+<td><a
+href="tables/multiple-mediator-a1.tex">multiple-mediator-a1.tex</a></td>
+<td>Table</td>
+</tr>
+<tr>
+<td></td>
+<td><a
+href="tables/multiple-mediator-a4.tex">multiple-mediator-a4.tex</a></td>
+<td>Table</td>
+</tr>
+<tr>
+<td></td>
+<td><a
+href="tables/multiple-mediator-b1.tex">multiple-mediator-b1.tex</a></td>
+<td>Table</td>
+</tr>
+<tr>
+<td></td>
+<td><a
+href="tables/multiple-mediator-b4.tex">multiple-mediator-b4.tex</a></td>
+<td>Table</td>
+</tr>
+<tr>
+<td></td>
+<td><a
+href="tables/multiple-mediator-c1.tex">multiple-mediator-c1.tex</a></td>
+<td>Table</td>
+</tr>
+<tr>
+<td></td>
+<td><a
+href="tables/multiple-mediator-c1.tex">multiple-mediator-c4.tex</a></td>
 <td>Table</td>
 </tr>
 <tr>
