@@ -26,7 +26,7 @@ Supplementary Material document.
 
 # R version and contributed packages
 
-All results are reproducible using R version 4.6.0 (2026-04-24) and the
+All results are reproducible using R version 4.6.1 (2026-06-24) and the
 contributed packages
 
 <table style="width:44%;">
@@ -63,11 +63,11 @@ contributed packages
 </tr>
 <tr>
 <td>enrichwith</td>
-<td>0.5.0</td>
+<td>0.6</td>
 </tr>
 <tr>
 <td>focuson</td>
-<td>0.1</td>
+<td>0.3.900</td>
 </tr>
 <tr>
 <td>future.apply</td>
@@ -91,7 +91,7 @@ contributed packages
 </tr>
 <tr>
 <td>mvtnorm</td>
-<td>1.4-1</td>
+<td>1.4-2</td>
 </tr>
 <tr>
 <td>numDeriv</td>
@@ -99,7 +99,7 @@ contributed packages
 </tr>
 <tr>
 <td>ordinal</td>
-<td>2025.12-29</td>
+<td>2026.7-26</td>
 </tr>
 <tr>
 <td>patchwork</td>
@@ -111,7 +111,7 @@ contributed packages
 </tr>
 <tr>
 <td>progressr</td>
-<td>0.19.0</td>
+<td>1.0.0</td>
 </tr>
 <tr>
 <td>robustbase</td>
@@ -123,7 +123,7 @@ contributed packages
 </tr>
 <tr>
 <td>tinytable</td>
-<td>0.16.0</td>
+<td>0.19.0</td>
 </tr>
 <tr>
 <td>tinytest</td>
