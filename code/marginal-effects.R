@@ -100,7 +100,7 @@ run_experiment <- function(fm, variable, newdata, R = 1000, hulc_ci = FALSE, alp
         method <- c("no", "mean", "median")
         if (isTRUE(br_base)) {
             brcmod <- update(cmod, method = "brglm_fit", type = "AS_mean")
-            objects <- list("no" = focus_fun("no", cmod),
+            objects <- list("no" = focus_fun("no", brcmod),
                             "mean" = focus_fun("mean", brcmod),
                             "median" = focus_fun("median", brcmod))
         } else {
