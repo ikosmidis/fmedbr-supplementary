@@ -72,7 +72,7 @@ fig_pu <- ggplot(summaries) +
     labs(x = "Student", y = NULL, title = titl) +
     coord_flip(ylim = ylims) +
     theme_minimal()
-ylims <- c(0, 0.025)
+ylims <- c(0, 0.03)
 titl <- "Mean bias"
 fig_bias <- ggplot(summaries) +
     geom_col(aes(student, mean_bias, fill = corbas), position = position_dodge2(padding = padd)) +
@@ -152,7 +152,7 @@ focuson_res <- focuson_settings |>
     subset(select = c("focus", "median_ML", "median_meanBR"))
 res <- brbb_res |>  left_join(focuson_res, by = "focus")
 levels(res$focus) <- c("$\\xi$", "$\\rho$")
-caption <- "Estimates of the beta-binomial overdispersion parameter for the carrots data in Example~\\ref{ex:beta-binomial}. The table reports estimates on both the logit scale $\\xi=\\log\\{\\rho/(1 - \\rho)\\}$ and the intra-class correlation scale $\\rho$. The columns show the ML estimator $\\hat\\psi$, the reduced median-bias estimator $\\psi^*$ of \\citet{pagui+etal:2017}, and the MBC estimator $\\tilde\\psi$ in~\\eqref{eq:focused}, computed using either the ML estimator (ML) or the reduced mean-bias estimator (meanBR) of $\\btheta = (\\beta_1, \\ldots, \\beta_4, \\xi)^\\top$."
+caption <- "Estimates of the beta-binomial overdispersion parameter for the carrots data in Section~\\ref{sec:supp:beta-binomial}. The table reports estimates on both the logit scale $\\xi=\\log\\{\\rho/(1 - \\rho)\\}$ and the intra-class correlation scale $\\rho$. The columns show the ML estimator $\\hat\\psi$, the reduced median-bias estimator $\\psi^*$ of \\citet{pagui+etal:2017}, and the MBC estimator $\\tilde\\psi$ in~\\eqref{eq:focused}, computed using either the ML estimator (ML) or the reduced mean-bias estimator (meanBR) of $\\btheta = (\\beta_1, \\ldots, \\beta_4, \\xi)^\\top$."
 res |>
     rename(`$\\psi^*$` = median,
            `$\\hat\\psi$` = no,
@@ -185,7 +185,7 @@ keep <- c("n", "estimator", "pu", "rmse",
 new_names <- c("$n$", "Estimator", "PU", "RMSE",
                "$r^*$", "HulC", "Wald [S]", "Wald [C]")
 for (r in seq_along(aqs)) {
-    caption <- paste0("Comparison of the ML estimator ($\\hat\\psi$), the MBC focus estimator ($\\tilde\\psi$), and the $r^*$-based estimator ($\\psi^*$) of the $", sprintf("%0.2f", 1 - aqs[r]), "$ quantile in terms of simulation-based estimates (see Example~\\ref{ex:weibull}) of probability of underestimation (PU), root mean squared error (RMSE), and coverage of nominally $95\\%$ $r^*$-based confidence intervals, HulC-type confidence intervals with $\\Delta = 0$, and Wald-type confidence intervals, based on supplied and compatible estimates of $\\btheta$ (``Wald [S]'' and ``Wald [C]'', respectively). All summaries are $\\times 100$.")
+    caption <- paste0("Comparison of the ML estimator ($\\hat\\psi$), the MBC focus estimator ($\\tilde\\psi$), and the $r^*$-based estimator ($\\psi^*$) of the $", sprintf("%0.2f", 1 - aqs[r]), "$ quantile in terms of simulation-based estimates (see Example~\\ref{sec:supp:weibull}) of probability of underestimation (PU), root mean squared error (RMSE), and coverage of nominally $95\\%$ $r^*$-based confidence intervals, HulC-type confidence intervals with $\\Delta = 0$, and Wald-type confidence intervals, based on supplied and compatible estimates of $\\btheta$ (``Wald [S]'' and ``Wald [C]'', respectively). All summaries are $\\times 100$.")
     summaries_keep <- summaries |>
         subset(estimator != "mean" & alpha_q == aqs[r],
                select = keep) |>
@@ -221,7 +221,7 @@ img_file <- file.path(results_dir, "osm.rda")
 out_file <- file.path(tables_dir, "osm.tex")
 ## Load results
 load(img_file)
-caption <- "Comparison of the plug-in estimator $\\gamma^\\dagger = h(\\btheta^\\dagger)$ of~(\\ref{eq:osm}) with the MBC focus estimator $\\tilde\\gamma$ based on Monte Carlo estimates $\\bP_1, \\ldots, \\bP_p$ at $\\btheta^\\dagger$ ($R = 500$), in terms of simulation-based estimates (see Example~\\ref{ex:ordinal-superiority}) of probability of underestimation (PU), mean bias (BIAS), root mean squared error (RMSE), and coverage of nominally $95\\%$ Wald-type confidence intervals based on the supplied estimates of $\\btheta$. All summaries are $\\times 100$."
+caption <- "Comparison of the plug-in estimator $\\gamma^\\dagger = h(\\btheta^\\dagger)$ of~(\\ref{eq:osm}) with the MBC focus estimator $\\tilde\\gamma$ based on Monte Carlo estimates $\\bP_1, \\ldots, \\bP_p$ at $\\btheta^\\dagger$ ($R = 500$), in terms of simulation-based estimates (see Example~\\ref{sec:supp:ordinal-superiority}) of probability of underestimation (PU), mean bias (BIAS), root mean squared error (RMSE), and coverage of nominally $95\\%$ Wald-type confidence intervals based on the supplied estimates of $\\btheta$. All summaries are $\\times 100$."
 new_names <- c("Temperature", "Estimator", "PU", "BIAS", "RMSE", "Wald")
 summaries |>
     transform(pu = pu * 100,
