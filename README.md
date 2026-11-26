@@ -51,7 +51,7 @@ contributed packages
 </tr>
 <tr>
 <td>brglm2</td>
-<td>1.1.0</td>
+<td>1.1.1</td>
 </tr>
 <tr>
 <td>detectseparation</td>
@@ -67,11 +67,11 @@ contributed packages
 </tr>
 <tr>
 <td>focuson</td>
-<td>0.4</td>
+<td>0.4.001</td>
 </tr>
 <tr>
 <td>future.apply</td>
-<td>1.20.2</td>
+<td>1.21.0</td>
 </tr>
 <tr>
 <td>ggplot2</td>
@@ -111,7 +111,7 @@ contributed packages
 </tr>
 <tr>
 <td>progressr</td>
-<td>1.0.0</td>
+<td>1.1.0</td>
 </tr>
 <tr>
 <td>robustbase</td>
