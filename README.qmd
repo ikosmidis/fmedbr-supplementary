@@ -25,6 +25,7 @@ date-format: long
 format: md
 ---
 
+
 # Directory structure
 
 ```{r}
